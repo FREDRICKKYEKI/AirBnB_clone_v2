@@ -11,7 +11,7 @@ env.hosts = ['35.153.17.172', '	100.25.155.61']
 env.user = "ubuntu"
 
 
-def do_deploy(archive_path : str):
+def do_deploy(archive_path: str):
     """ distributes an archive to your web servers"""
 
     if (exists(archive_path)) is False:
