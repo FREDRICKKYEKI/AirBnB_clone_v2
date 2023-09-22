@@ -2,3 +2,4 @@
 *main*.py
 *main*.sql
 *.vscode*
+*.env*
