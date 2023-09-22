@@ -23,16 +23,16 @@ class DBStorage:
         'password': os.getenv('HBNB_MYSQL_PWD'),
         'host': os.getenv('HBNB_MYSQL_HOST'),
         'database': os.getenv('HBNB_MYSQL_DB')
-        }
+    }
 
     def __init__(self):
         """instantiates new DBStorage"""
         self.__engine = create_engine('mysql+mysqldb://{}:{}@{}/{}'
-                           .format(DBStorage.__envs['user'],
-                                   DBStorage.__envs['password'],
-                                   DBStorage.__envs['host'],
-                                   DBStorage.__envs['database']),
-                                   pool_pre_ping=True)
+                                      .format(DBStorage.__envs['user'],
+                                              DBStorage.__envs['password'],
+                                              DBStorage.__envs['host'],
+                                              DBStorage.__envs['database']),
+                                      pool_pre_ping=True)
 
     def all(self, cls=None):
         """queries on the current database session (self.__session) all
@@ -70,7 +70,7 @@ class DBStorage:
 
     def delete(self, obj=None):
         """delete from the current database session obj if not None"""
-        if obj != None:
+        if obj is not None:
             self.__session.delete(obj)
 
     def reload(self):
@@ -84,4 +84,4 @@ class DBStorage:
 
     def close(self):
         """Close method"""
-        self.__session.remove()
+        self.__session.close()
