@@ -8,9 +8,9 @@ from models.review import Review
 from models.base_model import BaseModel
 from models.amenity import Amenity
 from models.place import Place
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 
-load_dotenv()
+# load_dotenv()
 
 
 storage_type = os.getenv('HBNB_TYPE_STORAGE')
