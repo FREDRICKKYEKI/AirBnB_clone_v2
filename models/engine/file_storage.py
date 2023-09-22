@@ -64,3 +64,7 @@ class FileStorage:
                         self.all()[key] = classes[val['__class__']](**val)
         except Exception as e:
             pass
+
+    def close(self):
+        """close method"""
+        self.reload()
