@@ -13,7 +13,8 @@ Write a script that starts a Flask web application:
         - ✅/number/<n>: display “n is a number” only if n is an integer
         - ✅/number_template/<n>: display a HTML page only if n is an integer:
             - H1 tag: “Number: n” inside the tag BODY
-        - ✅/number_odd_or_even/<n>: display a HTML page only if n is an integer:
+        - ✅/number_odd_or_even/<n>: display a HTML page only if n is an
+        integer:
             - H1 tag: “Number: n is even|odd” inside the tag BODY
     - ✅You must use the option strict_slashes=False in your route definition
 """

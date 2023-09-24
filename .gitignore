@@ -4,4 +4,4 @@
 *.vscode*
 *.env*
 *pycache*
-*sqldump*
+*dump*
