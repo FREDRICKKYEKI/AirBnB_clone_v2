@@ -37,8 +37,9 @@ app = Flask(__name__)
 @app.route('/states/<id>', strict_slashes=False)
 def states(id):
     """Display a HTML page: (inside the tag BODY)"""
+    states = storage.all(State).values()
+    sorted_states = sorted(states, key=lambda state: state.name)
     if id is not None:
-        states = storage.all(State).values()
         for state in states:
             if state.id == id:
                 return render_template("9-states.html", state=state, city=True)
