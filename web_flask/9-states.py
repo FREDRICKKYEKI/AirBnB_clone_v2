@@ -38,7 +38,6 @@ app = Flask(__name__)
 def states(id):
     """Display a HTML page: (inside the tag BODY)"""
     states = storage.all(State).values()
-    sorted_states = sorted(states, key=lambda state: state.name)
     if id is not None:
         for state in states:
             if state.id == id:
@@ -46,7 +45,7 @@ def states(id):
         return render_template("9-states.html", city=False, not_found=True)
     else:
         return render_template("9-states.html", city=False,
-                               states=storage.all(State).values())
+                               states=states)
 
 
 @app.teardown_appcontext
